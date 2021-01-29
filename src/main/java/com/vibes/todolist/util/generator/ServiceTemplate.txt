@@ -1,0 +1,71 @@
+/**
+ * {class-name}Service.java
+ * 
+ * @author {author}
+ * @version {version}
+ * @description {description}Service处理类
+ * @history
+ * {history-init}
+ */
+package com.vibes.todolist.module.{sub-module}.service;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.vibes.todolist.mybatis.plus.base.PagingScParamDto;
+import com.vibes.todolist.mybatis.plus.base.BaseEntity;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.vibes.todolist.mybatis.plus.base.PageUtil;
+import com.vibes.todolist.util.result.Result;
+import com.vibes.todolist.util.result.ResultUtil;
+import com.vibes.todolist.mybatis.plus.generator.entity.MCityEntity;
+import com.vibes.todolist.mybatis.plus.generator.mapper.MCityDao;
+
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+
+/**
+ * {class-name}Service.java
+ * 
+ * @author {author}
+ */
+@Service
+@Transactional(readOnly = true, rollbackFor = Exception.class)
+public class {class-name}Service extends ServiceImpl<MCityDao, MCityEntity> {
+
+    /**
+     * 新增{class-desc}处理
+     * 
+     * @param entity
+     * @return
+     */
+    @Transactional(readOnly = false)
+    public Result<String> add(final BaseEntity entity) {
+        return ResultUtil.success();
+    }
+
+    /**
+     * 删除{class-desc}处理
+     * 
+     * @param id 数据主键
+     * @return
+     */
+    @Transactional(readOnly = false)
+    public Result<String> delete(String id) {
+        return ResultUtil.success();
+    }
+
+    /**
+     * 更新{class-desc}处理
+     * 
+     * @param entity
+     * @return
+     */
+    @Transactional(readOnly = false)
+    public Result<String> update(BaseEntity entity) {
+        return ResultUtil.success();
+    }
+
+    public Result<IPage<PagingScParamDto>> page(PagingScParamDto sc) {
+        IPage<PagingScParamDto> page = PageUtil.getPage(sc);
+        return ResultUtil.success(page);
+    }
+}
